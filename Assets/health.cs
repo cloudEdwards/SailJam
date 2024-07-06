@@ -38,9 +38,6 @@ public class health : MonoBehaviour
             // game over screen
             GameOver();
         }
-        if(Input.GetKeyDown(KeyCode.Space)){
-            DamagePlayer(1);
-        }
     }
     public void DamagePlayer(int damage){
         currHealth-=damage;
