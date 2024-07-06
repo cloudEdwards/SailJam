@@ -8,9 +8,9 @@ public class Collision : MonoBehaviour
     // 2d collision method; look for obstacle tags
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Obstacle"))
-        if (healthComponent!= null){
-            healthComponent.DamagePlayer(1);
-        }
+            if (healthComponent!= null){
+                healthComponent.DamagePlayer(1);
+            }
     }
     // Start is called before the first frame update
     void Start()
