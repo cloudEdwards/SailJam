@@ -306,7 +306,7 @@ AreaEffector2D:
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
   m_ForceAngle: 20
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 1
   m_ForceVariation: 0
   m_ForceTarget: 0
   m_Drag: 0
@@ -631,7 +631,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -702,8 +702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836ff66840b73475489470c59d0ff602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 0.01
   rb: {fileID: 757774248}
+  rotationSpeed: 100
 --- !u!1 &761263958
 GameObject:
   m_ObjectHideFlags: 0
