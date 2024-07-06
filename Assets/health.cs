@@ -53,5 +53,6 @@ public class health : MonoBehaviour
     {
         Time.timeScale=1; //resume normal time
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload current scene
+        Start();
     }
 }
