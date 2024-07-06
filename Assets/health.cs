@@ -27,6 +27,7 @@ public class health : MonoBehaviour
     void Start()
     {
    boat = GameObject.FindWithTag("Player");
+   gameOverUI.SetActive(false);
    currHealth=maxHealth;        
     }
 
