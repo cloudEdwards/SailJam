@@ -47,6 +47,13 @@ public class health : MonoBehaviour
         // healthMeter.insert("♡");
         // healthMeter.pop();
     }
+    public void HealPlayer(int health)
+    {
+        if (currHealth<maxHealth)
+        {
+        currHealth+=health;
+        }
+    }
     void GameOver()
     {
         gameOverUI.SetActive(true);

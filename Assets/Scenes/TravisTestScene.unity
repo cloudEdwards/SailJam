@@ -1094,6 +1094,30 @@ PrefabInstance:
       propertyPath: wakeEffect.Array.data[1]
       value: 
       objectReference: {fileID: 263231505}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.81649655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.57735026
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8874320006733201842, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: gameOverUI
       value: 
