@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
     locked: 0
   - name: Sailboat
     uniqueID: 3453147419
+    locked: 0
+  - name: Obstacles
+    uniqueID: 850725555
     locked: 0
