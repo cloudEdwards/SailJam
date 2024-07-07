@@ -24,8 +24,8 @@ public class ObstacleProximity : MonoBehaviour
     //   Debug.Log(nearObstacles.Count);
       if (nearObstacles.Count>0)
       {
-        GauntletState()
-        return
+        GauntletState();
+        return;
       }
       TrackNearObstacles();
       DisplayObstacleInfo();
@@ -50,8 +50,8 @@ public class ObstacleProximity : MonoBehaviour
             .Take(maxObstaclesToTrack).ToList();
 
         if(sortedObstacles.Count==0){
-            nearObstacles.Clear()
-            return
+            nearObstacles.Clear();
+            return;
         }
         // nearObstacles.Clear();
 
@@ -95,7 +95,7 @@ public class ObstacleProximity : MonoBehaviour
         {
             crashed=false;
             hazard=false;
-            Debug.Log("Celebrate!!!")
+            Debug.Log("Celebrate!!!");
         }
         // event listener to check if damagePlayer was called
         crashed=true;
