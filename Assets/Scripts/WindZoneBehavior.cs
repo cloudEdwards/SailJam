@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,10 +6,12 @@ public class WindZoneBehavior : MonoBehaviour
 {
 
     public float windDirection;
-    
+    public ParticleSystem particleEffect;
+    public float windSpeed;
+    private List<ParticleSystem> instantiatedObjects=new List<ParticleSystem>();
 
-    public float randomMinTime;
-    public float randomMaxTime;
+    public float randomMinTime=30;
+    public float randomMaxTime=120;
 
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class WindZoneBehavior : MonoBehaviour
     {
         float newValue = Random.Range(0f, 359f);
 
-        while (System.Math.Abs(newValue - currentValue) < 50)
+        while (System.Math.Abs(newValue - currentValue) < 10)
         {
             newValue = Random.Range(0f, 359f);
         }

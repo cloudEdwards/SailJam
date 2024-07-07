@@ -10,7 +10,7 @@ using TMPro;
 public class health : MonoBehaviour
 {
     public int currHealth=0;
-    public int maxHealth=3;
+    public int maxHealth=5;
     public GameObject boat;
     public string hearts;
     public GameObject gameOverUI;
@@ -19,6 +19,9 @@ public class health : MonoBehaviour
     public GUIStyle healthStyle=new GUIStyle();
     private ObstacleProximity obstacleProximity;
     public TextMeshProUGUI numCleared;
+    public TextMeshProUGUI status;
+    public Button startButton;
+    private bool started=false;
  
     void OnGUI()
     {
@@ -31,13 +34,27 @@ public class health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    status.text="Welcome!";
     boat = GameObject.FindWithTag("Player");
-    gameOverUI.SetActive(false);
+    gameOverUI.SetActive(true);
+    if(started==false)
+    {
+
+    startButton.onClick.AddListener(StartGame);
+    }
+    Time.timeScale=0;
     currHealth=maxHealth;
     healthStyle.fontSize=20;  
     obstacleProximity=GetComponent<ObstacleProximity>();
     }
 
+    void StartGame()
+    {
+        Debug.Log("click");
+        gameOverUI.SetActive(false);
+        Time.timeScale=1;
+        started=true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -61,19 +78,25 @@ public class health : MonoBehaviour
     }
     void GameOver()
     {
+        status.text="Game Over!";
         gameOverUI.SetActive(true);
         Time.timeScale=0; // pause game
         if(obstacleProximity!=null)
         {   int cleared=obstacleProximity.gauntletsCleared;
             numCleared.text=$"Narrows Cleared: {cleared}";
-            // Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
+            Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
         }
     }
     public void Restart()
     {
-        Debug.Log("Restart");
+        if(started==true){
+
+        // Debug.Log("Restart");
         Time.timeScale=1; //resume normal time
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload current scene
         Start();
+        }
+        else
+        return;
     }
 }
