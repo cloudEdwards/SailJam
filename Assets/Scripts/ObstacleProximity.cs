@@ -5,9 +5,9 @@ using System.Linq;
 
 public class ObstacleProximity : MonoBehaviour
 {
-    public float detectRadius=10f;
+    public float detectRadius=4f;
     public int maxObstaclesToTrack = 5; // Maximum number of closest obstacles to track
-    public bool crashed = false;
+    public bool crashed = true;
 
 
     private List<ObstacleInfo> nearObstacles=new List<ObstacleInfo>();
@@ -22,10 +22,16 @@ public class ObstacleProximity : MonoBehaviour
     {
       TrackNearObstacles();
       DisplayObstacleInfo();
-      if (nearObstacles.length)
-      {
-        // check if damage method called
-      }
+      Debug.Log(nearObstacles.Count);
+    //   if (nearObstacles.Count>0)
+    //   {
+    //     crashed=false;
+    //     // check if damage method called
+    //   }
+    //   if (nearObstacles.Count==0 && !crashed);
+    //   {
+    //     Debug.Log("YAAAAAY!");
+    //   }
     }
      void TrackNearObstacles()
     {

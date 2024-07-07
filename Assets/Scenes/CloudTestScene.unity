@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6114595019557211208, guid: afc335e807f7535498c5d146b434ff6a, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6114595019557211208, guid: afc335e807f7535498c5d146b434ff6a, type: 3}
       propertyPath: m_ForceVariation
@@ -825,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[8].rarityWeight
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[9].rarityWeight
@@ -838,13 +838,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5490992704015015144, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 885107529}
   m_SourcePrefab: {fileID: 100100000, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
 --- !u!4 &771823298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1231720433249455867, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
   m_PrefabInstance: {fileID: 771823297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885107521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5490992704015015144, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+  m_PrefabInstance: {fileID: 771823297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885107529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885107521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f538a29daf8ed3abbf7907f06f730b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRadius: 10
+  maxObstaclesToTrack: 5
+  crashed: 0
 --- !u!1001 &1138980149
 PrefabInstance:
   m_ObjectHideFlags: 0
