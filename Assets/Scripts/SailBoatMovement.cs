@@ -21,10 +21,17 @@ public class SailBoatMovement : MonoBehaviour
 
     void Update()
     {
+
         if(degrees==360|degrees==-360){
             degrees=0;
         }
-        speedMultiplier = degrees switch
+
+        var waterWindDirection = waterWind.forceAngle;
+        var degreesCompare = degrees - waterWindDirection;
+
+        Debug.Log(degreesCompare);
+
+        speedMultiplier = degreesCompare switch
         {
             var d when (d > -30 && d < 30)||(d>330)||(d<-330) => 0.3f,
             var d when (d >= 30 && d < 60) || (d > -60 && d <= -30)||(d>=270)||(d<=-270) => 1f,
