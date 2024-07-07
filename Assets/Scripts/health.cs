@@ -84,14 +84,14 @@ public class health : MonoBehaviour
         if(obstacleProximity!=null)
         {   int cleared=obstacleProximity.gauntletsCleared;
             numCleared.text=$"Narrows Cleared: {cleared}";
-            // Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
+            Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
         }
     }
     public void Restart()
     {
         if(started==true){
 
-        Debug.Log("Restart");
+        // Debug.Log("Restart");
         Time.timeScale=1; //resume normal time
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload current scene
         Start();
