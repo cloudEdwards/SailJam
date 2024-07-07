@@ -6,7 +6,7 @@ using System.Linq;
 public class ObstacleProximity : MonoBehaviour
 {
     public GameObject celebrate;
-    public float celebrateDuration=4f;
+    public float celebrateDuration=2f;
     private GameObject boat;
     public int gauntletsCleared=0;
     public float detectRadius=4f;
