@@ -14,6 +14,7 @@ public class health : MonoBehaviour
     public GameObject gameOverUI;
     public Rect rect = new Rect(0, 0, 300, 100);
     public Vector3 offset = new Vector3(0f, 0f, 0.5f); // height above the target position
+    public GUIStyle healthStyle=new GUIStyle();
  
     void OnGUI()
     {
@@ -21,14 +22,15 @@ public class health : MonoBehaviour
         rect.x = point.x;
         rect.y = Screen.height - point.y - rect.height; // bottom left corner set to the 3D point
         hearts=string.Join("", Enumerable.Repeat("♥",currHealth));
-        GUI.Label(rect, $"Health: {hearts}");
+        GUI.Label(rect, $"Health: {hearts}", healthStyle);
     }
     // Start is called before the first frame update
     void Start()
     {
-   boat = GameObject.FindWithTag("Player");
-   gameOverUI.SetActive(false);
-   currHealth=maxHealth;        
+    boat = GameObject.FindWithTag("Player");
+    gameOverUI.SetActive(false);
+    currHealth=maxHealth;
+    healthStyle.fontSize=20;   
     }
 
     // Update is called once per frame
@@ -44,6 +46,13 @@ public class health : MonoBehaviour
         currHealth-=damage;
         // healthMeter.insert("♡");
         // healthMeter.pop();
+    }
+    public void HealPlayer(int health)
+    {
+        if (currHealth<maxHealth)
+        {
+        currHealth+=health;
+        }
     }
     void GameOver()
     {
