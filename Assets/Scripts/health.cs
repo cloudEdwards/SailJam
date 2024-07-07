@@ -15,6 +15,7 @@ public class health : MonoBehaviour
     public Rect rect = new Rect(0, 0, 300, 100);
     public Vector3 offset = new Vector3(0f, 0f, 0.5f); // height above the target position
     public GUIStyle healthStyle=new GUIStyle();
+    private ObstacleProximity obstacleProximity;
  
     void OnGUI()
     {
@@ -30,7 +31,8 @@ public class health : MonoBehaviour
     boat = GameObject.FindWithTag("Player");
     gameOverUI.SetActive(false);
     currHealth=maxHealth;
-    healthStyle.fontSize=20;   
+    healthStyle.fontSize=20;  
+    obstacleProximity=GetComponent<ObstacleProximity>();
     }
 
     // Update is called once per frame
@@ -58,6 +60,10 @@ public class health : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         Time.timeScale=0; // pause game
+        if(obstacleProximity!=null)
+        {
+            Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
+        }
     }
     public void Restart()
     {
