@@ -10331,7 +10331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a44905c7ac84882bb4107d872ec2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bump: {fileID: 0}
+  bumpSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  onomatopoeia: {fileID: 8961902470216019109, guid: 1e7360b84d29e4f37a61865c0b19a253, type: 3}
 --- !u!1 &6918358322284099649
 GameObject:
   m_ObjectHideFlags: 0

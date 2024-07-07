@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000001bd9d2cd
+  m_ApplyToSortingLayers: 000000001bd9d2cdcb3e3795
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1304,9 +1304,9 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: bumpSounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8961902470216019109, guid: 1e7360b84d29e4f37a61865c0b19a253, type: 3}
     - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: bumpSounds.Array.data[0]
       value: 
@@ -1315,6 +1315,22 @@ PrefabInstance:
       propertyPath: bumpSounds.Array.data[1]
       value: 
       objectReference: {fileID: 2034133814}
+    - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: onomatopoeiaList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: onomatopoeiaList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8163092285652619876, guid: 67fb2effbb78642be953bca1fba2e7e3, type: 3}
+    - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: onomatopoeiaList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8107537213027328436, guid: 7efe93d24794143acb2df2d906445262, type: 3}
+    - target: {fileID: 3938459827412654812, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: onomatopoeiaList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1100325336337343821, guid: acf12bd6b69b342bc8164ac0a4874973, type: 3}
     - target: {fileID: 5490992704015015144, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: m_Name
       value: Sailboat
