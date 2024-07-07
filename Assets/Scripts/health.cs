@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class health : MonoBehaviour
@@ -16,6 +18,7 @@ public class health : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 0f, 0.5f); // height above the target position
     public GUIStyle healthStyle=new GUIStyle();
     private ObstacleProximity obstacleProximity;
+    public TextMeshProUGUI numCleared;
  
     void OnGUI()
     {
@@ -61,8 +64,9 @@ public class health : MonoBehaviour
         gameOverUI.SetActive(true);
         Time.timeScale=0; // pause game
         if(obstacleProximity!=null)
-        {
-            Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
+        {   int cleared=obstacleProximity.gauntletsCleared;
+            numCleared.text=$"Narrows Cleared: {cleared}";
+            // Debug.Log($"Gauntlets Cleared: {obstacleProximity.gauntletsCleared}");
         }
     }
     public void Restart()

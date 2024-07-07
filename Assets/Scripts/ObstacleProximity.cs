@@ -6,7 +6,7 @@ using System.Linq;
 public class ObstacleProximity : MonoBehaviour
 {
     public int gauntletsCleared=0;
-    public float detectRadius=4f;
+    public float detectRadius=6f;
     public int maxObstaclesToTrack = 5; // Maximum number of closest obstacles to track
     public bool crashed = true;
     public bool hazard=true;
