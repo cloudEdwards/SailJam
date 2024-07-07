@@ -12,9 +12,9 @@ public class health : MonoBehaviour
     public GameObject boat;
     public string hearts;
     public GameObject gameOverUI;
+    public Rect rect = new Rect(0, 0, 300, 100);
+    public Vector3 offset = new Vector3(0f, 0f, 0.5f); // height above the target position
     public GUIStyle healthStyle=new GUIStyle();
-   Rect rect = new Rect(0, 0, 300, 100);
-   Vector3 offset = new Vector3(0f, 0f, 0.5f); // height above the target position
  
     void OnGUI()
     {

@@ -207,11 +207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!198 &263231505 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9087971264381245549, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-  m_PrefabInstance: {fileID: 1549969826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &396020612
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,11 +501,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &526949681 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 315346238452557852, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-  m_PrefabInstance: {fileID: 1549969826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,46 +1067,6 @@ PrefabInstance:
     - target: {fileID: 5490992704015015144, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: m_Name
       value: Sailboat (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6025357670871066096, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: wakeEffect
-      value: 
-      objectReference: {fileID: 526949681}
-    - target: {fileID: 6025357670871066096, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: wakeEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6025357670871066096, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: wakeEffect.Array.data[0]
-      value: 
-      objectReference: {fileID: 526949681}
-    - target: {fileID: 6025357670871066096, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: wakeEffect.Array.data[1]
-      value: 
-      objectReference: {fileID: 263231505}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.81649655
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.57735026
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582599426960878524, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8874320006733201842, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: gameOverUI
