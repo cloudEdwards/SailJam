@@ -12,11 +12,13 @@ public class GridObstacleSpawner : MonoBehaviour
 {
     public GameObject boat;
     public float islandDensity = 10f;
+    public float minDistance = 5f; // Minimum distance between objects
     public List<IslandPrefabInfo> islandPrefabs;
     private float tileSize = 100f;
 
     // Dictionary to keep track of spawned objects and their grid positions
     private Dictionary<Vector2Int, List<GameObject>> spawnedObjects = new Dictionary<Vector2Int, List<GameObject>>();
+    private List<Vector3> occupiedPositions = new List<Vector3>();
 
     private Vector2Int lastBoatTileIndex;
 
@@ -67,23 +69,63 @@ public class GridObstacleSpawner : MonoBehaviour
 
             // Populate the tile with objects (random positions)
             Vector3 tileCenter = new Vector3(tileIndex.x * tileSize, tileIndex.y * tileSize, 0);
-            for (int i = 0; i < islandDensity; i++) // Example: spawn 10 islands per tile
+            for (int i = 0; i < islandDensity; i++)
             {
+                Vector3 islandPosition = Vector3.zero;
+                bool positionValid = false;
+
+                // Find a valid position that doesn't overlap with the boat or other islands
+                for (int attempt = 0; attempt < 10; attempt++)
+                {
+                    Vector3 randomOffset = new Vector3(Random.Range(-tileSize / 2, tileSize / 2), Random.Range(-tileSize / 2, tileSize / 2), 0);
+                    islandPosition = tileCenter + randomOffset;
+
+                    if (!IsPositionOccupied(islandPosition))
+                    {
+                        positionValid = true;
+                        break;
+                    }
+                }
+
+                if (!positionValid)
+                {
+                    // Skip this island if a valid position couldn't be found
+                    continue;
+                }
+
                 GameObject selectedPrefab = ChooseIslandPrefab();
-                Vector3 randomOffset = new Vector3(Random.Range(-tileSize / 2, tileSize / 2), Random.Range(-tileSize / 2, tileSize / 2), 0);
-                Vector3 islandPosition = tileCenter + randomOffset;
                 Quaternion islandRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
                 GameObject island = Instantiate(selectedPrefab, islandPosition, islandRotation);
-                
+
                 // Randomize island scale
-                float scale = Random.Range(0.8f, 1.2f);
+                var scaleX = island.transform.localScale.x;
+                float scale = Random.Range(0.8f * scaleX, 1.2f * scaleX);
                 island.transform.localScale = new Vector3(scale, scale, scale);
 
                 tileObjects.Add(island);
+                occupiedPositions.Add(islandPosition);
             }
 
             spawnedObjects[tileIndex] = tileObjects;
         }
+    }
+
+    bool IsPositionOccupied(Vector3 position)
+    {
+        if (Vector3.Distance(position, boat.transform.position) < minDistance)
+        {
+            return true;
+        }
+
+        foreach (Vector3 occupiedPosition in occupiedPositions)
+        {
+            if (Vector3.Distance(position, occupiedPosition) < minDistance)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     GameObject ChooseIslandPrefab()

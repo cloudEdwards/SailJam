@@ -756,8 +756,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 415832675}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.size
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[1].prefab
@@ -796,6 +800,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7802501608994356227, guid: 86912193fa3e742bdaec7baf316bb6ef, type: 3}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[10].prefab
+      value: 
+      objectReference: {fileID: 4375412073397465777, guid: 92749329f53a74538bc83cd2205e6139, type: 3}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[11].prefab
+      value: 
+      objectReference: {fileID: 3655811233849506306, guid: 1c4d1de9d295f4b4a94a96fdfe192028, type: 3}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[12].prefab
+      value: 
+      objectReference: {fileID: 1274613937445215382, guid: 7b255f287b9444326a748ac7f1edc926, type: 3}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[13].prefab
+      value: 
+      objectReference: {fileID: 7589566204853338021, guid: cfe7d8ed6fc2f422eb68e1ce858b2bdc, type: 3}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[14].prefab
+      value: 
+      objectReference: {fileID: 7795719780616959577, guid: 86264454434374430a7a714737544e4c, type: 3}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[1].rarityWeight
       value: 1
       objectReference: {fileID: 0}
@@ -825,10 +849,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[8].rarityWeight
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
       propertyPath: islandPrefabs.Array.data[9].rarityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[10].rarityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[11].rarityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[12].rarityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[13].rarityWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372843807026334660, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      propertyPath: islandPrefabs.Array.data[14].rarityWeight
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8874320006733201842, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
