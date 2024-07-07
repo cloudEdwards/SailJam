@@ -5,8 +5,11 @@ using System.Linq;
 
 public class ObstacleProximity : MonoBehaviour
 {
+    public GameObject celebrate;
+    public float celebrateDuration=4f;
+    private GameObject boat;
     public int gauntletsCleared=0;
-    public float detectRadius=6f;
+    public float detectRadius=4f;
     public int maxObstaclesToTrack = 5; // Maximum number of closest obstacles to track
     public bool crashed = true;
     public bool hazard=true;
@@ -24,7 +27,8 @@ public class ObstacleProximity : MonoBehaviour
     private float lastUpdateTime = 0f;
     void Start()
     {
-        
+        boat = GameObject.FindWithTag("Player"); // Assuming the boat has the "Player" tag
+
     }
 
     // Update is called once per frame
@@ -111,6 +115,7 @@ public class ObstacleProximity : MonoBehaviour
         {
             crashed = false;
             hazard = false;
+            StartCoroutine(CelebrateGauntletCleared());
             currentState = GameState.Normal;
             Debug.Log("Celebrate!!!");
             IncrementCleared();
@@ -126,4 +131,28 @@ public class ObstacleProximity : MonoBehaviour
     {
       gauntletsCleared++;
     }
+
+    private System.Collections.IEnumerator CelebrateGauntletCleared()
+{
+    if (celebrate != null && boat != null)
+    {
+        // Instantiate the celebration particle at the boat's position
+        GameObject celebration = Instantiate(celebrate, boat.transform.position, Quaternion.identity);
+        
+        // Wait for the celebration duration
+        yield return new WaitForSeconds(celebrateDuration);
+        
+        // Destroy the celebration object
+        Destroy(celebration);
+    }
+    else
+    {
+        Debug.LogWarning("Celebrate Particle Prefab or Boat reference is missing!");
+    }
+
+    // Change state after celebration
+    currentState = GameState.Normal;
+    Debug.Log("Exiting Gauntlet State: Celebrate!!!");
+    IncrementCleared();
+}
 }
