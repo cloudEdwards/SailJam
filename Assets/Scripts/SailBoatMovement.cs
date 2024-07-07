@@ -6,13 +6,11 @@ public class SailBoatMovement : MonoBehaviour
     public Rigidbody2D rb; // Reference to the Rigidbody2D component
     
     public float rotationSpeed = 100f;
-    // public float degrees=0; // track degrees to compare boat angle to wind
     public float speedMultiplier; // based on degrees (points of sail)
     public AreaEffector2D waterWind; // base scene area effector; speed of 1
 
     public ParticleSystem[] wakeEffect;
     private Vector2 windDirection;
-    // private float boatAngle;
     private float relativeWindAngle;
 
     Vector2 movement; // Vector to store the movement direction
@@ -26,13 +24,9 @@ public class SailBoatMovement : MonoBehaviour
     {
         UpdateWindDirection();
         CalculateRelativeWindAngle();
-        // if(degrees==360|degrees==-360){
-        //     degrees=0;
-        // }
+
 
         var degreesCompare = relativeWindAngle;
-
-        // Debug.Log(degreesCompare);
 
         speedMultiplier = degreesCompare switch
         {
@@ -79,7 +73,6 @@ public class SailBoatMovement : MonoBehaviour
     {
         Vector2 boatDirection=rb.transform.up;
         relativeWindAngle=Vector2.SignedAngle(boatDirection,windDirection);
-        // Debug.Log(relativeWindAngle);
     }
     void UpdateWindDirection()
     {
@@ -87,7 +80,6 @@ public class SailBoatMovement : MonoBehaviour
         {
             float windAngle = waterWind.transform.eulerAngles.z * Mathf.Deg2Rad;
             windDirection = new Vector2(Mathf.Cos(windAngle), Mathf.Sin(windAngle));
-            // Debug.Log(windDirection);
         }
     }
 }
