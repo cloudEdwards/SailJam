@@ -10027,6 +10027,7 @@ GameObject:
   - component: {fileID: 662507446851340720}
   - component: {fileID: 8372843807026334660}
   - component: {fileID: 3186219664272041030}
+  - component: {fileID: 3938459827412654812}
   m_Layer: 0
   m_Name: Sailboat
   m_TagString: Player
@@ -10302,6 +10303,8 @@ MonoBehaviour:
     rarityWeight: 2
   - prefab: {fileID: 7795719780616959577, guid: 86264454434374430a7a714737544e4c, type: 3}
     rarityWeight: 2
+  - prefab: {fileID: 7941913407002318525, guid: 211dc7554385b402b91a8891c90ef1cd, type: 3}
+    rarityWeight: 2
 --- !u!114 &3186219664272041030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10316,6 +10319,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 5490992704015015144}
   waterTilePrefab: {fileID: 7765650357370936255, guid: 0699b2a7e495643e8bd364f369fb9b05, type: 3}
+--- !u!114 &3938459827412654812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490992704015015144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a44905c7ac84882bb4107d872ec2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bump: {fileID: 0}
 --- !u!1 &6918358322284099649
 GameObject:
   m_ObjectHideFlags: 0
