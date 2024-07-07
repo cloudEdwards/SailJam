@@ -58,7 +58,7 @@ public class WindZoneBehavior : MonoBehaviour
     
     void ChangeEfectorZone()
     {
-        Debug.Log("ChangeEfectorZone");
+        // Debug.Log("ChangeEfectorZone");
         areaEffector2D.forceAngle = windDirection;
     }
 
