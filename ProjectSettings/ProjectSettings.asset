@@ -669,11 +669,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 4705b440-331a-426c-8d7e-420386e5fe3b
+  cloudProjectId: 2137b2ea-3237-440e-985e-b1a9b6c15cae
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: nelson-jam
-  organizationId: trvsmartin
+  projectName: SailJam
+  organizationId: dream-chameleon
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
