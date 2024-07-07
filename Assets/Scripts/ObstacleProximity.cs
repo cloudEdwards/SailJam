@@ -9,36 +9,52 @@ public class ObstacleProximity : MonoBehaviour
     public int maxObstaclesToTrack = 5; // Maximum number of closest obstacles to track
     public bool crashed = true;
     public bool hazard=true;
+    public enum GameState
+    {
+      Normal,
+      Gauntlet
+    }
+    private GameState currentState=GameState.Normal;
 
 
     private List<ObstacleInfo> nearObstacles=new List<ObstacleInfo>();
     // Start is called before the first frame update
+     private float updateInterval = 0.5f; // Update every half second
+    private float lastUpdateTime = 0f;
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+        void Update()
     {
-    //   Debug.Log(nearObstacles.Count);
-      if (nearObstacles.Count>0)
-      {
-        GauntletState();
-        return;
-      }
-      TrackNearObstacles();
-      DisplayObstacleInfo();
-    
-    //   {
-    //     crashed=false;
-    //     // check if damage method called
-    //   }
-    //   if (nearObstacles.Count==0 && !crashed);
-    //   {
-    //     Debug.Log("YAAAAAY!");
-    //   }
+        if (Time.time - lastUpdateTime > updateInterval)
+        {
+            lastUpdateTime = Time.time;
+            
+            switch (currentState)
+            {
+                case GameState.Normal:
+                    CheckGauntlet();
+                    TrackNearObstacles();
+                    break;
+                case GameState.Gauntlet:
+                    GauntletState();
+                    break;
+            }
+
+            DisplayObstacleInfo();
+        }
     }
+    void CheckGauntlet()
+    {
+      if(nearObstacles.Count>0)
+      {
+        currentState=GameState.Gauntlet;
+      }
+    }
+
      void TrackNearObstacles()
     {
         // Detect all colliders within the detection radius
@@ -87,20 +103,19 @@ public class ObstacleProximity : MonoBehaviour
             this.distance = distance;
         }
     }
-    void GauntletState()
+     void GauntletState()
     {
-      while (hazard)
-      {
-        if(nearObstacles.Count==0)
+        if (nearObstacles.Count == 0)
         {
-            crashed=false;
-            hazard=false;
+            crashed = false;
+            hazard = false;
+            currentState = GameState.Normal;
             Debug.Log("Celebrate!!!");
         }
-        // event listener to check if damagePlayer was called
-        crashed=true;
-        
-      }
-
+        else
+        {
+            crashed = true;
+            hazard = true;
+        }
     }
 }
