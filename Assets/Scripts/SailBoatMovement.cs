@@ -32,8 +32,8 @@ public class SailBoatMovement : MonoBehaviour
         {
             var d when (d > -30 && d < 30)=> 1.7f,
             var d when (d >= 30 && d < 90) || (d > -90 && d <= -30)=> 2f,
-            var d when (d >= 90 && d < 150) || (d > -150 && d <= -90)=> 3.5f,
-            var d when (d>=150)||(d<=-150)=> 0.3f,
+            var d when (d >= 90 && d < 160) || (d > -160 && d <= -90)=> 3.5f,
+            var d when (d>=160)||(d<=-160)=> 0.3f,
             _ => 0.1f
         };
         // Input
