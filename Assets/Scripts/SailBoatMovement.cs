@@ -75,13 +75,19 @@ public class SailBoatMovement : MonoBehaviour
         rb.MoveRotation(rb.rotation + rotationAmount);
 
     }
+    void CalculateRelativeWindAngle()
+    {
+        Vector2 boatDirection=rb.transform.up;
+        relativeWindAngle=Vector2.SignedAngle(boatDirection,windDirection);
+        Debug.Log(relativeWindAngle);
+    }
     void UpdateWindDirection()
     {
         if(waterWind!=null)
         {
             float windAngle = waterWind.transform.eulerAngles.z * Mathf.Deg2Rad;
             windDirection = new Vector2(Mathf.Cos(windAngle), Mathf.Sin(windAngle));
-            Debug.Log(windDirection);
+            // Debug.Log(windDirection);
         }
     }
 }
