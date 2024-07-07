@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,20 +6,16 @@ public class WindZoneBehavior : MonoBehaviour
 {
 
     public float windDirection;
-    public ParticleSystem particleEffect;
-    public GameObject sailShip;
-    public AreaEffector2D areaEffector2D;
-    public float windSpeed;
-    // List to keep track of instantiated objects
-    private List<ParticleSystem> instantiatedObjects = new List<ParticleSystem>();
+    
+
+    public float randomMinTime;
+    public float randomMaxTime;
 
 
     // Start is called before the first frame update
     void Start()
     { 
-        areaEffector2D = GetComponent<AreaEffector2D>();
-        areaEffector2D.forceAngle = windDirection;
-        
+        ScheduleNextCall();
     }
 
     // Update is called once per frame
@@ -28,47 +24,32 @@ public class WindZoneBehavior : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void RandonWindDirection()
     {
-        if (other.CompareTag("Player"))
-        {
-            TriggerParticleEffect();
-            ChangeEfectorZone();
-
-        }
+        Debug.Log("Random Wind Called At: " + Time.deltaTime);
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, windDirectionRandomizer(transform.rotation.z)));
+        ScheduleNextCall() ;
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    float windDirectionRandomizer(float currentValue)
     {
-        // Check if the object that exited is the one you are interested in
-        if (other.CompareTag("Player"))
+        float newValue = Random.Range(0f, 359f);
+
+        while (System.Math.Abs(newValue - currentValue) < 50)
         {
-            DestroyAllInstantiatedObjects();
+            newValue = Random.Range(0f, 359f);
         }
+        Debug.Log("New Wind Vale: " + newValue);
+        return newValue;
     }
 
-    void TriggerParticleEffect()
+    void ScheduleNextCall()
     {
-        ParticleSystem particlesWind = Instantiate(particleEffect, new Vector3(this.transform.position.x, this.transform.position.y, -10), Quaternion.Euler(new Vector3(0,0,windDirection)));
-        particlesWind.transform.SetParent(this.transform);
-        particlesWind.playbackSpeed = windSpeed;
-        particlesWind.Play();
-        instantiatedObjects.Add(particlesWind);
+        // Calculate a random interval between 10 and 20 seconds
+        float waitTime = Random.Range(randomMinTime, randomMaxTime);
 
+        // Schedule the next call
+        Invoke(nameof(RandonWindDirection), waitTime);
     }
     
-    void ChangeEfectorZone()
-    {
-        Debug.Log("ChangeEfectorZone");
-        areaEffector2D.forceAngle = windDirection;
-    }
-
-    void DestroyAllInstantiatedObjects()
-    {
-        foreach (ParticleSystem obj in instantiatedObjects)
-        {
-            Destroy(obj);
-        }
-        instantiatedObjects.Clear();
-    }
 }
