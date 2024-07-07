@@ -19,6 +19,8 @@ public class health : MonoBehaviour
     public GUIStyle healthStyle=new GUIStyle();
     private ObstacleProximity obstacleProximity;
     public TextMeshProUGUI numCleared;
+    public TextMeshProUGUI status;
+    public Button startButton;
  
     void OnGUI()
     {
@@ -31,13 +33,22 @@ public class health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    status.text="Welcome!";
     boat = GameObject.FindWithTag("Player");
-    gameOverUI.SetActive(false);
+    gameOverUI.SetActive(true);
+    startButton.onClick.AddListener(StartGame);
+    Time.timeScale=0;
     currHealth=maxHealth;
     healthStyle.fontSize=20;  
     obstacleProximity=GetComponent<ObstacleProximity>();
     }
 
+    void StartGame()
+    {
+        Debug.Log("click");
+        gameOverUI.SetActive(false);
+        Time.timeScale=1;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -61,6 +72,7 @@ public class health : MonoBehaviour
     }
     void GameOver()
     {
+        status.text="Game Over!";
         gameOverUI.SetActive(true);
         Time.timeScale=0; // pause game
         if(obstacleProximity!=null)
