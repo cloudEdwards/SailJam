@@ -10121,15 +10121,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.8602699, y: 2.10429}
-      - {x: 0.4673614, y: 3.7077813}
-      - {x: -0.000000433065, y: 4.631557}
-      - {x: -0.49206823, y: 3.6814952}
-      - {x: -0.8972116, y: 2.019386}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.43567795, y: -1.9117934}
-      - {x: 0.43567836, y: -1.8927801}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 0.7629312, y: 2.0443892}
+      - {x: 0.40746066, y: 3.460691}
+      - {x: -0.0000003934838, y: 4.2977295}
+      - {x: -0.38724202, y: 3.47933}
+      - {x: -0.7774102, y: 1.9819483}
+      - {x: -0.87618077, y: 0.9679247}
+      - {x: -0.78977066, y: -0.18033141}
+      - {x: -0.36828965, y: -1.7994794}
+      - {x: 0.3757776, y: -1.765491}
+      - {x: 0.7848761, y: -0.20968914}
+      - {x: 0.8836679, y: 0.9454621}
   m_UseDelaunayMesh: 0
 --- !u!114 &6025357670871066096
 MonoBehaviour:
@@ -10146,7 +10148,6 @@ MonoBehaviour:
   moveSpeed: 0.05
   rb: {fileID: 1579100146922237374}
   rotationSpeed: 100
-  degrees: 0
   speedMultiplier: 0
   waterWind: {fileID: 0}
   wakeEffect:
@@ -10269,13 +10270,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 5490992704015015144}
   islandDensity: 10
+  minDistance: 5
   islandPrefabs:
   - prefab: {fileID: 4019835445785210201, guid: 3a3ea3a77b6934605b363b734f40f27c, type: 3}
     rarityWeight: 10
-  - prefab: {fileID: 878589713290351930, guid: 7357053012cb24e8bbfaf357fbfee049, type: 3}
-    rarityWeight: 8
   - prefab: {fileID: 1562686599907934414, guid: 27650f390c40c42c0844d6cedf3a9167, type: 3}
     rarityWeight: 1
+  - prefab: {fileID: 878589713290351930, guid: 7357053012cb24e8bbfaf357fbfee049, type: 3}
+    rarityWeight: 8
+  - prefab: {fileID: 2999711740824188623, guid: e4a5b1c26c9bd4ddf8da2d7a460b70c4, type: 3}
+    rarityWeight: 8
+  - prefab: {fileID: 4247921729476604920, guid: 8eb7f36e5bbce42499bafda0d9678084, type: 3}
+    rarityWeight: 8
+  - prefab: {fileID: 1001211831011502601, guid: 4e1d020ca182e44a2bb99f5ad74ff4c4, type: 3}
+    rarityWeight: 8
+  - prefab: {fileID: 3300622008673566937, guid: b90687dd665f44dafbe42c49cb13eedc, type: 3}
+    rarityWeight: 8
+  - prefab: {fileID: 6641393215032044340, guid: 22181f07f5bfd467d898217dea8b7cc7, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 3001032839785978685, guid: 91e8737db39e947979a471a3ca1315d7, type: 3}
+    rarityWeight: 3
+  - prefab: {fileID: 7802501608994356227, guid: 86912193fa3e742bdaec7baf316bb6ef, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 4375412073397465777, guid: 92749329f53a74538bc83cd2205e6139, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 3655811233849506306, guid: 1c4d1de9d295f4b4a94a96fdfe192028, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 1274613937445215382, guid: 7b255f287b9444326a748ac7f1edc926, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 7589566204853338021, guid: cfe7d8ed6fc2f422eb68e1ce858b2bdc, type: 3}
+    rarityWeight: 2
+  - prefab: {fileID: 7795719780616959577, guid: 86264454434374430a7a714737544e4c, type: 3}
+    rarityWeight: 2
 --- !u!114 &3186219664272041030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10283,7 +10309,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5490992704015015144}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9928a837210d040f9a4cca5617fcfb13, type: 3}
   m_Name: 
