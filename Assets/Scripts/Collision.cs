@@ -11,6 +11,11 @@ public class Collision : MonoBehaviour
             if (healthComponent!= null){
                 healthComponent.DamagePlayer(1);
             }
+        if(collision.gameObject.CompareTag("Dock"))
+            if(healthComponent!=null)
+            {
+                healthComponent.HealPlayer(1);
+            }
     }
     // Start is called before the first frame update
     void Start()
