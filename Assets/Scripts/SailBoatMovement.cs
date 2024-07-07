@@ -30,9 +30,9 @@ public class SailBoatMovement : MonoBehaviour
 
         speedMultiplier = degreesCompare switch
         {
-            var d when (d > -30 && d < 30)=> 1.7f,
-            var d when (d >= 30 && d < 90) || (d > -90 && d <= -30)=> 2.2f,
-            var d when (d >= 90 && d < 150) || (d > -150 && d <= -90)=> 1.2f,
+            var d when (d > -30 && d < 30)=> 2f,
+            var d when (d >= 30 && d < 90) || (d > -90 && d <= -30)=> 2.5f,
+            var d when (d >= 90 && d < 150) || (d > -150 && d <= -90)=> 1.5f,
             var d when (d>=150)||(d<=-150)=> 0.3f,
             _ => 0.1f
         };
