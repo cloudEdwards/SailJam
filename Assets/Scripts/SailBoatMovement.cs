@@ -63,7 +63,7 @@ public class SailBoatMovement : MonoBehaviour
         // Calculate the amount of rotation
         float rotationAmount = movement.y * rotationSpeed * Time.deltaTime;
         // degrees+=rotationAmount;
-        Debug.Log($"{relativeWindAngle}, {speedMultiplier}");
+        // Debug.Log($"{relativeWindAngle}, {speedMultiplier}");
         
         // Apply the rotation to the Rigidbody2D
         rb.MoveRotation(rb.rotation + rotationAmount);
