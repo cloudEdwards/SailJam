@@ -61,6 +61,7 @@ public class health : MonoBehaviour
     }
     public void Restart()
     {
+        Debug.Log("Restart");
         Time.timeScale=1; //resume normal time
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload current scene
         Start();
