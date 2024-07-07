@@ -10,7 +10,7 @@ using TMPro;
 public class health : MonoBehaviour
 {
     public int currHealth=0;
-    public int maxHealth=3;
+    public int maxHealth=5;
     public GameObject boat;
     public string hearts;
     public GameObject gameOverUI;
