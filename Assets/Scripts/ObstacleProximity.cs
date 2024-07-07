@@ -8,6 +8,7 @@ public class ObstacleProximity : MonoBehaviour
     public float detectRadius=4f;
     public int maxObstaclesToTrack = 5; // Maximum number of closest obstacles to track
     public bool crashed = true;
+    public bool hazard=true;
 
 
     private List<ObstacleInfo> nearObstacles=new List<ObstacleInfo>();
@@ -20,10 +21,15 @@ public class ObstacleProximity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    //   Debug.Log(nearObstacles.Count);
+      if (nearObstacles.Count>0)
+      {
+        GauntletState()
+        return
+      }
       TrackNearObstacles();
       DisplayObstacleInfo();
-      Debug.Log(nearObstacles.Count);
-    //   if (nearObstacles.Count>0)
+    
     //   {
     //     crashed=false;
     //     // check if damage method called
@@ -35,8 +41,6 @@ public class ObstacleProximity : MonoBehaviour
     }
      void TrackNearObstacles()
     {
-        nearObstacles.Clear();
-
         // Detect all colliders within the detection radius
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectRadius);
 
@@ -44,6 +48,13 @@ public class ObstacleProximity : MonoBehaviour
             .Where(collider => collider.gameObject.tag != "Player" && collider.gameObject.tag != "Force")
             .OrderBy(collider => Vector2.Distance(transform.position, collider.transform.position))
             .Take(maxObstaclesToTrack).ToList();
+
+        if(sortedObstacles.Count==0){
+            nearObstacles.Clear()
+            return
+        }
+        // nearObstacles.Clear();
+
         // Sort colliders by distance
         // System.Array.Sort(hitColliders, (a, b) => 
         //     Vector2.Distance(transform.position, a.transform.position).CompareTo(
@@ -75,5 +86,21 @@ public class ObstacleProximity : MonoBehaviour
             this.name = name;
             this.distance = distance;
         }
+    }
+    void GauntletState()
+    {
+      while (hazard)
+      {
+        if(nearObstacles.Count==0)
+        {
+            crashed=false;
+            hazard=false;
+            Debug.Log("Celebrate!!!")
+        }
+        // event listener to check if damagePlayer was called
+        crashed=true;
+        
+      }
+
     }
 }
