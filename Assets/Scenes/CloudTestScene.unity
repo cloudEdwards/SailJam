@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6114595019557211208, guid: afc335e807f7535498c5d146b434ff6a, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6114595019557211208, guid: afc335e807f7535498c5d146b434ff6a, type: 3}
       propertyPath: m_ForceVariation
@@ -1330,7 +1330,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5490992704015015144, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 885107529}
   m_SourcePrefab: {fileID: 100100000, guid: acb0f6eb81b5d464e8692b0bbd8811b9, type: 3}
 --- !u!4 &771823298 stripped
 Transform:

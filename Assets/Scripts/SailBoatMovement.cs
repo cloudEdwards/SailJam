@@ -61,11 +61,10 @@ public class SailBoatMovement : MonoBehaviour
         rb.AddForce(forceDirection.normalized * (moveSpeed*speedMultiplier), ForceMode2D.Impulse);
         
         // Calculate the amount of rotation
-        float rotationAmount = 0f;
         float movementAmount = Mathf.Abs(movement.x) > .1f ? movement.x * -1 : 0f;
         movementAmount = Mathf.Abs(movement.y) > .1f ? movement.y : movementAmount;
         
-        rotationAmount = movementAmount * rotationSpeed * Time.deltaTime;
+        float rotationAmount = movementAmount * rotationSpeed * Time.deltaTime;
         
         // Apply the rotation to the Rigidbody2D
         rb.MoveRotation(rb.rotation + rotationAmount);
