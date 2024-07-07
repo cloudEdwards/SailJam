@@ -21,6 +21,7 @@ public class health : MonoBehaviour
     public TextMeshProUGUI numCleared;
     public TextMeshProUGUI status;
     public Button startButton;
+    private bool started=false;
  
     void OnGUI()
     {
@@ -36,7 +37,11 @@ public class health : MonoBehaviour
     status.text="Welcome!";
     boat = GameObject.FindWithTag("Player");
     gameOverUI.SetActive(true);
+    if(started==false)
+    {
+
     startButton.onClick.AddListener(StartGame);
+    }
     Time.timeScale=0;
     currHealth=maxHealth;
     healthStyle.fontSize=20;  
@@ -48,6 +53,7 @@ public class health : MonoBehaviour
         Debug.Log("click");
         gameOverUI.SetActive(false);
         Time.timeScale=1;
+        started=true;
     }
     // Update is called once per frame
     void Update()
@@ -83,9 +89,14 @@ public class health : MonoBehaviour
     }
     public void Restart()
     {
+        if(started==true){
+
         Debug.Log("Restart");
         Time.timeScale=1; //resume normal time
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload current scene
         Start();
+        }
+        else
+        return;
     }
 }
