@@ -51,7 +51,8 @@ public class WindZoneBehavior : MonoBehaviour
     {
         ParticleSystem particlesWind = Instantiate(particleEffect, new Vector3(this.transform.position.x, this.transform.position.y, -10), Quaternion.Euler(new Vector3(0,0,windDirection)));
         particlesWind.transform.SetParent(this.transform);
-        particlesWind.playbackSpeed = windSpeed;
+        var main =particlesWind.main;
+        main.simulationSpeed=windSpeed;
         particlesWind.Play();
         instantiatedObjects.Add(particlesWind);
 
