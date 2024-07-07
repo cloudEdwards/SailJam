@@ -28,7 +28,7 @@ public class health : MonoBehaviour
         Vector3 point = Camera.main.WorldToScreenPoint(boat.transform.position + offset);
         rect.x = point.x;
         rect.y = Screen.height - point.y - rect.height; // bottom left corner set to the 3D point
-        hearts=string.Join("", Enumerable.Repeat("♥",currHealth));
+        hearts=string.Join("", Enumerable.Repeat("<3",currHealth));
         GUI.Label(rect, $"Health: {hearts}", healthStyle);
     }
     // Start is called before the first frame update
