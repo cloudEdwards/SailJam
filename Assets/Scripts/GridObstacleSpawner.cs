@@ -11,9 +11,9 @@ public class IslandPrefabInfo
 public class GridObstacleSpawner : MonoBehaviour
 {
     public GameObject boat;
+    public float islandDensity = 10f;
     public List<IslandPrefabInfo> islandPrefabs;
     private float tileSize = 100f;
-    private float prepopulateDistance = 500f; // Distance within which to prepopulate islands
 
     // Dictionary to keep track of spawned objects and their grid positions
     private Dictionary<Vector2Int, List<GameObject>> spawnedObjects = new Dictionary<Vector2Int, List<GameObject>>();
@@ -67,7 +67,7 @@ public class GridObstacleSpawner : MonoBehaviour
 
             // Populate the tile with objects (random positions)
             Vector3 tileCenter = new Vector3(tileIndex.x * tileSize, tileIndex.y * tileSize, 0);
-            for (int i = 0; i < 3; i++) // Example: spawn 3 islands per tile
+            for (int i = 0; i < islandDensity; i++) // Example: spawn 10 islands per tile
             {
                 GameObject selectedPrefab = ChooseIslandPrefab();
                 Vector3 randomOffset = new Vector3(Random.Range(-tileSize / 2, tileSize / 2), Random.Range(-tileSize / 2, tileSize / 2), 0);
