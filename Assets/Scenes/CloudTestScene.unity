@@ -1357,6 +1357,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 9128042113627258002, guid: 23896182c229c4110b237cd061c99164, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128042113627258002, guid: 23896182c229c4110b237cd061c99164, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128042113627258002, guid: 23896182c229c4110b237cd061c99164, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128042113627258002, guid: 23896182c229c4110b237cd061c99164, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4433962
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1377,11 +1393,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7193989133565264376, guid: e43fb3549eb854212b4d03af4224168b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7193989133565264376, guid: e43fb3549eb854212b4d03af4224168b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.8
+      value: -40.7
       objectReference: {fileID: 0}
     - target: {fileID: 7193989133565264376, guid: e43fb3549eb854212b4d03af4224168b, type: 3}
       propertyPath: m_LocalPosition.z
