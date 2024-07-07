@@ -12,6 +12,7 @@ public class GridObstacleSpawner : MonoBehaviour
 {
     public GameObject boat;
     public float islandDensity = 10f;
+    public float minDistance = 5f; // Minimum distance between objects
     public List<IslandPrefabInfo> islandPrefabs;
     private float tileSize = 100f;
 
@@ -111,7 +112,6 @@ public class GridObstacleSpawner : MonoBehaviour
 
     bool IsPositionOccupied(Vector3 position)
     {
-        float minDistance = 5f; // Minimum distance between objects
         if (Vector3.Distance(position, boat.transform.position) < minDistance)
         {
             return true;
