@@ -61,7 +61,7 @@ public class ObstacleProximity : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectRadius);
 
           var sortedObstacles = hitColliders
-            .Where(collider => collider.gameObject.tag != "Player" && collider.gameObject.tag != "Force")
+            .Where(collider => collider.gameObject.tag != "Player" && collider.gameObject.tag != "Force" && !collider.GetComponent<AreaEffector2D>())
             .OrderBy(collider => Vector2.Distance(transform.position, collider.transform.position))
             .Take(maxObstaclesToTrack).ToList();
 
@@ -90,7 +90,7 @@ public class ObstacleProximity : MonoBehaviour
         {
             info += $"{obstacle.name}: {obstacle.distance:F2}m\n";
         }
-        Debug.Log(info);
+        // Debug.Log(info);
     }
     private struct ObstacleInfo
     {
@@ -105,6 +105,7 @@ public class ObstacleProximity : MonoBehaviour
     }
      void GauntletState()
     {
+        TrackNearObstacles();
         if (nearObstacles.Count == 0)
         {
             crashed = false;
@@ -116,6 +117,7 @@ public class ObstacleProximity : MonoBehaviour
         {
             crashed = true;
             hazard = true;
+            Debug.Log($"In Gauntlet {nearObstacles.Count} nearby");
         }
     }
 }
